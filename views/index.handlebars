@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row center-align">
+        <h1>Eat The Burger!</h1>
+    </div>
+    <div class="row">
+        <div class="col m6 center-align" id="burgersReadyContainer">
+            <h4>Burgers Ready</h4>
+            <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+                <li>
+                    {{name}}
+                    <button class="btn-small change-devoured" data-id="{{id}}">Devour It!</button>
+                </li>
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col m6 center-align" id="devouredBurgers">
+            <h4>Burgers Devoured</h4>
+            <ul>
+                {{#each burgers}}
+                {{#if devoured}}
+                <li><s>{{name}}</s></li>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class="row center-align">
+        <h4>Add a Burger!</h4>
+        <form class="create-form">
+            <input type="text" id="addBurger" name="name">
+            <button class="btn-small" type="submit">Submit</button>
+            <p>Make a request for a new burger!</p>
+        </form>
+    </div>
+</div>
